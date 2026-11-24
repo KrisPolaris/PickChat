@@ -6,7 +6,7 @@
   <title>PickChat — Just pick and chat</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Comic+Neue:wght@400;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&family=Orbitron:wght@600;800;900&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg-app: #0b141a;
@@ -26,6 +26,7 @@
       --border: rgba(134, 150, 160, 0.16);
       --font-main: 'Inter', system-ui, -apple-system, sans-serif;
       --shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+      --bg-overlay: none;
     }
 
     [data-theme="light"] {
@@ -45,6 +46,170 @@
       --danger: #dc2626;
       --border: rgba(17, 27, 33, 0.12);
       --shadow: 0 12px 32px rgba(17, 27, 33, 0.12);
+      --bg-overlay: none;
+    }
+
+    /* Tryb BebzunChat */
+    body.mode-bebzunchat {
+      --bg-app: #000000;
+      --bg-panel: #0a0a0a;
+      --bg-header: #111111;
+      --bg-input: #222222;
+      --bg-hover: #1a1a1a;
+      --bg-active: #003300;
+      --bubble-in: #1a1a1a;
+      --bubble-out: #004d00;
+      --text-main: #00ff00;
+      --text-muted: #4ade80;
+      --accent: #00ff00;
+      --accent-hover: #22ff22;
+      --read-tick: #ff00ff;
+      --danger: #ff0055;
+      --border: rgba(0, 255, 0, 0.35);
+      --shadow: 0 0 20px rgba(0, 255, 0, 0.25);
+      --bg-overlay: none;
+    }
+
+    /* Tryb OrkaNet — warianty */
+    body.mode-orkanet.orkanet-standard {
+      --bg-app: #000000;
+      --bg-panel: rgba(12, 16, 22, 0.88);
+      --bg-header: rgba(17, 17, 17, 0.92);
+      --bg-input: rgba(17, 17, 17, 0.9);
+      --bg-hover: rgba(0, 255, 255, 0.12);
+      --bg-active: rgba(0, 255, 255, 0.2);
+      --bubble-in: rgba(17, 17, 17, 0.9);
+      --bubble-out: rgba(0, 90, 95, 0.85);
+      --text-main: #00ffff;
+      --text-muted: #ffcc00;
+      --accent: #00ffff;
+      --accent-hover: #66ffff;
+      --read-tick: #ffcc00;
+      --danger: #ff4444;
+      --border: #00ffff;
+      --font-main: 'Bungee', cursive;
+      --bg-overlay: url('456.jpg') center/cover no-repeat fixed;
+    }
+
+    body.mode-orkanet.orkanet-cyberpunk {
+      --bg-app: #05050d;
+      --bg-panel: rgba(20, 5, 35, 0.72);
+      --bg-header: rgba(10, 5, 20, 0.85);
+      --bg-input: rgba(20, 5, 35, 0.85);
+      --bg-hover: rgba(0, 255, 255, 0.14);
+      --bg-active: rgba(255, 0, 85, 0.22);
+      --bubble-in: rgba(20, 5, 35, 0.78);
+      --bubble-out: rgba(0, 95, 110, 0.78);
+      --text-main: #00ffff;
+      --text-muted: #ff007f;
+      --accent: #00ffff;
+      --accent-hover: #ff0055;
+      --read-tick: #ff007f;
+      --danger: #ff0055;
+      --border: rgba(0, 255, 255, 0.6);
+      --font-main: 'Orbitron', system-ui, sans-serif;
+      --bg-overlay: url('NightCity.png') center/cover no-repeat fixed;
+    }
+
+    body.mode-orkanet.orkanet-premium {
+      --bg-app: #f8fafc;
+      --bg-panel: #ffffff;
+      --bg-header: #ffffff;
+      --bg-input: #f1f5f9;
+      --bg-hover: #eff6ff;
+      --bg-active: #dbeafe;
+      --bubble-in: #f1f5f9;
+      --bubble-out: #2563eb;
+      --text-main: #1e293b;
+      --text-muted: #2563eb;
+      --accent: #2563eb;
+      --accent-hover: #1d4ed8;
+      --read-tick: #ffcc00;
+      --danger: #dc2626;
+      --border: rgba(37, 99, 235, 0.25);
+      --font-main: 'Bungee', cursive;
+      --bg-overlay: none;
+    }
+
+    body.mode-orkanet.orkanet-dark {
+      --bg-app: #121212;
+      --bg-panel: #1e1e1e;
+      --bg-header: #1f1f1f;
+      --bg-input: #252525;
+      --bg-hover: #2d2d2d;
+      --bg-active: #332940;
+      --bubble-in: #1e1e1e;
+      --bubble-out: #3700b3;
+      --text-main: #e0e0e0;
+      --text-muted: #bb86fc;
+      --accent: #bb86fc;
+      --accent-hover: #cf9fff;
+      --read-tick: #03dac6;
+      --danger: #cf6679;
+      --border: #333333;
+      --font-main: 'Inter', sans-serif;
+      --bg-overlay: none;
+    }
+
+    body.mode-orkanet.orkanet-cyberpunk-legacy {
+      --bg-app: #0f0f1a;
+      --bg-panel: #1a1a2e;
+      --bg-header: #1a1a2e;
+      --bg-input: #0f0f1a;
+      --bg-hover: rgba(0, 217, 255, 0.12);
+      --bg-active: rgba(255, 0, 110, 0.2);
+      --bubble-in: #1a1a2e;
+      --bubble-out: #0b3b4c;
+      --text-main: #e0e0e0;
+      --text-muted: #00d9ff;
+      --accent: #00d9ff;
+      --accent-hover: #ff006e;
+      --read-tick: #ff006e;
+      --danger: #ff006e;
+      --border: rgba(0, 217, 255, 0.35);
+      --font-main: 'Segoe UI', sans-serif;
+      --bg-overlay: radial-gradient(circle at 20% 50%, rgba(0, 217, 255, 0.14) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(255, 0, 110, 0.14) 0%, transparent 50%);
+    }
+
+    @keyframes neonPulse {
+      0%, 100% { box-shadow: 0 0 5px #00ffff; }
+      50% { box-shadow: 0 0 18px #00ffff; }
+    }
+
+    @keyframes redGlowPulse {
+      0%, 80%, 100% {
+        border-color: rgba(0, 255, 255, 0.5);
+        box-shadow: inset 0 0 10px rgba(0, 255, 255, 0.15), 0 0 10px rgba(0, 255, 255, 0.3);
+      }
+      85%, 95% {
+        border-color: #ff0055;
+        box-shadow: inset 0 0 15px rgba(255, 0, 85, 0.5), 0 0 22px #ff0055;
+      }
+    }
+
+    body.mode-orkanet.orkanet-standard .btn-primary,
+    body.mode-orkanet.orkanet-standard .pill-btn.active {
+      background: rgba(17, 17, 17, 0.9);
+      color: #00ffff;
+      border: 1px solid #00ffff;
+      animation: neonPulse 2s infinite ease-in-out;
+    }
+
+    body.mode-orkanet.orkanet-cyberpunk .btn-primary,
+    body.mode-orkanet.orkanet-cyberpunk .pill-btn.active {
+      background: linear-gradient(135deg, rgba(20, 5, 35, 0.75), rgba(10, 0, 20, 0.75)), url('cyberfunky.webp') center/cover no-repeat;
+      color: #00ffff;
+      border: 1px solid rgba(0, 255, 255, 0.6);
+      animation: redGlowPulse 5s infinite;
+    }
+
+    body.mode-orkanet.orkanet-premium .app-shell,
+    body.mode-orkanet.orkanet-cyberpunk-legacy .app-shell,
+    body.mode-orkanet.orkanet-dark .app-shell,
+    body.mode-orkanet.orkanet-cyberpunk .app-shell,
+    body.mode-orkanet.orkanet-standard .app-shell {
+      background-image: var(--bg-overlay);
+      background-size: cover;
     }
 
     * {
@@ -480,6 +645,31 @@
       font-weight: 600;
     }
 
+    .bebzun-rooms-bar {
+      padding: 6px 12px;
+      background: var(--bg-panel);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    .bebzun-room-btn {
+      padding: 5px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      background: var(--bg-header);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+    }
+
+    .bebzun-room-btn.active {
+      background: var(--accent);
+      color: #000000;
+      border-color: var(--accent);
+    }
+
     .chat-search-bar {
       padding: 8px 14px;
       background: var(--bg-panel);
@@ -657,6 +847,12 @@
       padding: 10px 14px;
       max-height: 250px;
       overflow-y: auto;
+    }
+
+    .gif-status {
+      font-size: 11.5px;
+      color: var(--text-muted);
+      margin-top: 6px;
     }
 
     .gif-grid {
@@ -870,7 +1066,7 @@
           <div id="myAvatar" class="avatar">?</div>
           <div style="min-width:0;">
             <div id="myUsernameLabel" class="me-name">Ty</div>
-            <div class="me-sub">Just pick and chat</div>
+            <div id="myModeSubtitle" class="me-sub">Just pick and chat</div>
           </div>
         </div>
         <div class="icon-actions">
@@ -917,6 +1113,11 @@
           </div>
         </div>
 
+        <div id="bebzunRoomsBar" class="bebzun-rooms-bar hidden">
+          <button id="bebzunRoomGlobal" class="bebzun-room-btn active" type="button">GŁÓWNY 1</button>
+          <button id="bebzunRoomGlobal2" class="bebzun-room-btn" type="button">GŁÓWNY 2</button>
+        </div>
+
         <div id="chatSearchBar" class="chat-search-bar hidden">
           <input id="msgSearchInput" class="input" type="text" placeholder="Szukaj w tej rozmowie..." />
           <button id="closeMsgSearchBtn" class="icon-btn" title="Zamknij">✕</button>
@@ -933,9 +1134,10 @@
 
         <div id="gifPicker" class="gif-picker hidden">
           <div style="display:flex;gap:8px;align-items:center;">
-            <input id="gifSearchInput" class="input" type="text" placeholder="Szukaj GIF-a (np. cat, lol, gg)..." />
+            <input id="gifSearchInput" class="input" type="text" placeholder="Szukaj GIF-a (np. kot, cat, lol, ogień, taniec)..." />
             <button id="closeGifBtn" class="icon-btn" type="button">✕</button>
           </div>
+          <div id="gifStatus" class="gif-status"></div>
           <div id="gifGrid" class="gif-grid"></div>
         </div>
 
@@ -972,6 +1174,28 @@
           <button id="closeSettingsBtn" class="icon-btn" title="Zamknij">✕</button>
         </div>
         <div class="drawer-body">
+          <div class="card-box">
+            <h3>Tryb aplikacji</h3>
+            <div class="field">
+              <label for="appModeSelect">Wybierz tryb</label>
+              <select id="appModeSelect" class="select">
+                <option value="pickchat">PickChat (domyślny)</option>
+                <option value="orkanet">OrkaNet</option>
+                <option value="bebzunchat">BebzunChat (serwer bebechchat)</option>
+              </select>
+            </div>
+            <div id="orkanetVariantField" class="field hidden">
+              <label for="orkanetVariantSelect">Styl OrkaNet</label>
+              <select id="orkanetVariantSelect" class="select">
+                <option value="standard">OrkaNet Standard (456.jpg / Bungee)</option>
+                <option value="cyberpunk">OrkaNet Cyberpunk (NightCity.png / Orbitron)</option>
+                <option value="premium">OrkaNet Premium</option>
+                <option value="dark">OrkaNet Dark</option>
+                <option value="cyberpunk-legacy">OrkaNet Cyberpunk Legacy</option>
+              </select>
+            </div>
+          </div>
+
           <div class="card-box">
             <h3>Wygląd, kolor i czcionka</h3>
             <div class="field">
@@ -1121,6 +1345,7 @@
       onSnapshot,
       addDoc,
       query,
+      where,
       orderBy,
       serverTimestamp
     } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
@@ -1131,26 +1356,43 @@
       appId: "1:000000000000:web:orkanet67"
     };
 
+    const bebzunFirebaseConfig = {
+      apiKey: "AIzaSyDPvjNjR6nTHQuWdhQGAGk9iJgvPKDQTXA",
+      authDomain: "bebechchat.firebaseapp.com",
+      projectId: "bebechchat",
+      storageBucket: "bebechchat.firebasestorage.app",
+      messagingSenderId: "738356779230",
+      appId: "1:738356779230:web:2c41e46431284e3fb78a4f"
+    };
+
     const app = initializeApp(firebaseConfig);
     const db = getFirestore(app);
 
+    const bebzunApp = initializeApp(bebzunFirebaseConfig, "bebechchat_app");
+    const bebzunDb = getFirestore(bebzunApp);
+
     const FALLBACK_GIFS = [
-      { title: "GG", url: "https://media.giphy.com/media/111ebonMs90YLu/giphy.gif" },
-      { title: "LOL", url: "https://media.giphy.com/media/10JhviFuU2gWD6/giphy.gif" },
-      { title: "OK", url: "https://media.giphy.com/media/3o7abKhOpu0NwenH3O/giphy.gif" },
-      { title: "Fire", url: "https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif" },
-      { title: "Cat", url: "https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" },
-      { title: "Mind blown", url: "https://media.giphy.com/media/2rqEdFfkMzXmo/giphy.gif" }
+      { title: "GG", tags: ["gg", "ok", "dobrze", "super", "thumbs"], url: "https://media.giphy.com/media/111ebonMs90YLu/giphy.gif" },
+      { title: "LOL", tags: ["lol", "haha", "smiech", "śmiech", "funny"], url: "https://media.giphy.com/media/10JhviFuU2gWD6/giphy.gif" },
+      { title: "OK", tags: ["ok", "spoko", "zgoda", "yes", "git"], url: "https://media.giphy.com/media/3o7abKhOpu0NwenH3O/giphy.gif" },
+      { title: "Fire", tags: ["fire", "ogien", "ogień", "lit", "hot"], url: "https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif" },
+      { title: "Cat", tags: ["cat", "kot", "kotek", "zwierze", "zwierzę"], url: "https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" },
+      { title: "Mind blown", tags: ["mind", "szok", "wow", "co", "what", "omg"], url: "https://media.giphy.com/media/2rqEdFfkMzXmo/giphy.gif" },
+      { title: "Dance", tags: ["dance", "taniec", "party", "impreza", "vibing"], url: "https://media.giphy.com/media/l0amJzxhIAbee/giphy.gif" },
+      { title: "Cry", tags: ["cry", "placz", "płacz", "smutek", "sad"], url: "https://media.giphy.com/media/L95W4wv8nnb9K/giphy.gif" }
     ];
 
     const state = {
       mode: "login",
+      appMode: localStorage.getItem("pickchat_app_mode") || "pickchat",
+      orkanetVariant: localStorage.getItem("pickchat_orkanet_variant") || "standard",
+      bebzunRoom: "global",
       me: null,
       users: [],
       groups: [],
       channels: [],
-      tab: "users", // "users" | "groups" | "channels" | "public"
-      activeTarget: null, // { type: "user" | "group" | "channel" | "public", id, title, avatar, owner, desc, groupData }
+      tab: "users",
+      activeTarget: null,
       messages: [],
       replyTo: null,
       forwardingMsg: null,
@@ -1167,6 +1409,10 @@
 
     const $ = (id) => document.getElementById(id);
 
+    function isBebzunPublicChat() {
+      return state.activeTarget?.type === "public" && state.appMode === "bebzunchat";
+    }
+
     function sanitizeUsername(raw) {
       return (raw || "")
         .trim()
@@ -1182,6 +1428,56 @@
         .join("");
     }
 
+    function applyAppMode() {
+      document.body.classList.remove(
+        "mode-orkanet",
+        "mode-bebzunchat",
+        "orkanet-standard",
+        "orkanet-cyberpunk",
+        "orkanet-premium",
+        "orkanet-dark",
+        "orkanet-cyberpunk-legacy"
+      );
+
+      $("appModeSelect").value = state.appMode;
+      $("orkanetVariantSelect").value = state.orkanetVariant;
+      $("orkanetVariantField").classList.toggle("hidden", state.appMode !== "orkanet");
+
+      if (state.appMode === "orkanet") {
+        document.body.classList.add("mode-orkanet", `orkanet-${state.orkanetVariant}`);
+        $("myModeSubtitle").textContent = `OrkaNet • ${state.orkanetVariant}`;
+      } else if (state.appMode === "bebzunchat") {
+        document.body.classList.add("mode-bebzunchat");
+        $("myModeSubtitle").textContent = "BebzunChat • bebechchat";
+      } else {
+        $("myModeSubtitle").textContent = "Just pick and chat";
+      }
+
+      if (state.tab === "public") {
+        renderSideList();
+      }
+      if (state.activeTarget?.type === "public") {
+        openChat(getPublicServerTarget());
+      }
+    }
+
+    function getPublicServerTarget() {
+      if (state.appMode === "bebzunchat") {
+        return {
+          type: "public",
+          id: "bebechchat_server",
+          title: "BebzunChat server",
+          avatar: ""
+        };
+      }
+      return {
+        type: "public",
+        id: "main",
+        title: "Public Server",
+        avatar: ""
+      };
+    }
+
     function applyAppearance(theme = "dark", font = "'Inter', system-ui, sans-serif", accent = "#00a884") {
       document.documentElement.setAttribute("data-theme", theme);
       document.documentElement.style.setProperty("--font-main", font);
@@ -1190,6 +1486,7 @@
       $("themeSelect").value = theme;
       $("fontSelect").value = font;
       $("accentSelect").value = accent;
+      applyAppMode();
     }
 
     function renderAvatarEl(el, label, avatar) {
@@ -1227,8 +1524,8 @@
       return `ostatnio ${d.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}`;
     }
 
-    // Automatyczne logowanie jeśli zapisano sesję
     async function tryAutoLogin() {
+      applyAppMode();
       const savedUser = localStorage.getItem("pickchat_session_user");
       if (!savedUser) return;
       try {
@@ -1544,26 +1841,25 @@
           container.appendChild(item);
         });
       } else if (state.tab === "public") {
+        const pubTarget = getPublicServerTarget();
         const item = document.createElement("div");
         item.className = "list-item" + (state.activeTarget?.type === "public" ? " active" : "");
         const av = document.createElement("div");
         av.className = "avatar";
-        av.textContent = "🌐";
+        av.textContent = state.appMode === "bebzunchat" ? "💬" : "🌐";
+        const preview = state.appMode === "bebzunchat"
+          ? "Serwer bebechchat • GŁÓWNY 1 & GŁÓWNY 2"
+          : "Wspólny pokój dla wszystkich na PickChat";
         item.innerHTML = `
           <div class="item-meta">
             <div class="item-top">
-              <span class="item-title">Public Server</span>
+              <span class="item-title">${escapeHtml(pubTarget.title)}</span>
             </div>
-            <div class="item-preview">Wspólny pokój dla wszystkich na PickChat</div>
+            <div class="item-preview">${escapeHtml(preview)}</div>
           </div>
         `;
         item.prepend(av);
-        item.addEventListener("click", () => openChat({
-          type: "public",
-          id: "main",
-          title: "Public Server",
-          avatar: ""
-        }));
+        item.addEventListener("click", () => openChat(pubTarget));
         container.appendChild(item);
       }
     }
@@ -1584,6 +1880,41 @@
       return collection(getChatDocRef(), "messages");
     }
 
+    function syncBebzunRoomsUI() {
+      const showRooms = isBebzunPublicChat();
+      $("bebzunRoomsBar").classList.toggle("hidden", !showRooms);
+      $("bebzunRoomGlobal").classList.toggle("active", state.bebzunRoom === "global");
+      $("bebzunRoomGlobal2").classList.toggle("active", state.bebzunRoom === "global2");
+    }
+
+    $("bebzunRoomGlobal").addEventListener("click", () => {
+      state.bebzunRoom = "global";
+      if (state.activeTarget?.type === "public") openChat(getPublicServerTarget());
+    });
+
+    $("bebzunRoomGlobal2").addEventListener("click", () => {
+      state.bebzunRoom = "global2";
+      if (state.activeTarget?.type === "public") openChat(getPublicServerTarget());
+    });
+
+    async function maybeTriggerBebzunBot(text) {
+      if (!isBebzunPublicChat() || !text) return;
+      const lower = text.toLowerCase();
+      if (lower.includes("bebzun") || lower.includes("bebech")) {
+        setTimeout(async () => {
+          try {
+            await addDoc(collection(bebzunDb, "messages"), {
+              user: "Bebzun 🤖",
+              text: "CZY JA BYŁEM PRZYWOŁANY?",
+              room: state.bebzunRoom,
+              timestamp: serverTimestamp(),
+              isBot: true
+            });
+          } catch {}
+        }, 700);
+      }
+    }
+
     function openChat(target) {
       state.activeTarget = target;
       state.replyTo = null;
@@ -1591,8 +1922,14 @@
       $("settingsDrawer").classList.add("hidden");
       showEmptyOrChat();
       $("chatArea").classList.add("mobile-open");
+      syncBebzunRoomsUI();
 
-      $("peerTitle").textContent = target.title;
+      const bebzunMode = isBebzunPublicChat();
+      const roomLabel = bebzunMode
+        ? `${target.title} (${state.bebzunRoom === "global2" ? "GŁÓWNY 2" : "GŁÓWNY 1"})`
+        : target.title;
+
+      $("peerTitle").textContent = roomLabel;
       $("peerSubtitle").classList.remove("typing");
       $("infoBtn").classList.add("hidden");
 
@@ -1614,14 +1951,48 @@
         $("peerSubtitle").textContent = target.desc || `Kanał • autor: ${target.owner || "?"}`;
         $("infoBtn").classList.remove("hidden");
       } else {
-        $("peerAvatar").innerHTML = "🌐";
-        $("peerSubtitle").textContent = `${state.users.length} zarejestrowanych użytkowników`;
+        $("peerAvatar").innerHTML = bebzunMode ? "💬" : "🌐";
+        $("peerSubtitle").textContent = bebzunMode
+          ? `Projekt Firebase: bebechchat (${state.bebzunRoom})`
+          : `${state.users.length} zarejestrowanych użytkowników`;
       }
 
       renderSideList();
 
       if (state.unsubMessages) state.unsubMessages();
       if (state.unsubChatMeta) state.unsubChatMeta();
+
+      if (bebzunMode) {
+        let initialLoad = true;
+        const bQuery = query(collection(bebzunDb, "messages"), where("room", "==", state.bebzunRoom));
+        state.unsubMessages = onSnapshot(bQuery, (snap) => {
+          const msgs = [];
+          snap.forEach((d) => {
+            const raw = d.data();
+            const ms = raw.timestamp?.toMillis ? raw.timestamp.toMillis() : (raw.clientTime || Date.now());
+            msgs.push({
+              id: d.id,
+              sender: raw.user || "Gość",
+              text: raw.text || "",
+              imageUrl: raw.image || "",
+              _sortMs: ms,
+              createdAt: raw.timestamp || null,
+              readBy: [raw.user || "Gość"],
+              reactions: {}
+            });
+          });
+          msgs.sort((a, b) => a._sortMs - b._sortMs);
+          state.messages = msgs;
+
+          if (!initialLoad && msgs.length > 0) {
+            const last = msgs[msgs.length - 1];
+            if (last.sender !== state.me.username) playPing();
+          }
+          initialLoad = false;
+          renderMessages();
+        });
+        return;
+      }
 
       state.unsubChatMeta = onSnapshot(getChatDocRef(), (snap) => {
         if (!snap.exists() || state.activeTarget.type === "channel") return;
@@ -1716,7 +2087,7 @@
         const editedTag = m.edited ? `<span>edytowano</span>` : "";
         const readBy = Array.isArray(m.readBy) ? m.readBy : [];
         const isRead = readBy.some((u) => u !== m.sender);
-        const tickHtml = mine && state.activeTarget.type !== "channel"
+        const tickHtml = mine && state.activeTarget.type !== "channel" && !isBebzunPublicChat()
           ? `<span class="tick ${isRead ? "read" : ""}" title="${isRead ? "Przeczytano" : "Wysłano"}">${isRead ? "✓✓" : "✓"}</span>`
           : "";
 
@@ -1733,95 +2104,110 @@
 
         row.appendChild(bubble);
 
-        const reactions = m.reactions || {};
-        const chips = Object.entries(reactions).filter(([, arr]) => Array.isArray(arr) && arr.length > 0);
-        if (chips.length) {
-          const rRow = document.createElement("div");
-          rRow.className = "reactions-row";
-          chips.forEach(([emoji, users]) => {
-            const chip = document.createElement("button");
-            chip.type = "button";
-            chip.className = "reaction-chip";
-            chip.textContent = `${emoji} ${users.length}`;
-            chip.title = users.join(", ");
-            chip.addEventListener("click", () => toggleReaction(m.id, emoji, users));
-            rRow.appendChild(chip);
-          });
-          row.appendChild(rRow);
-        }
-
-        const actions = document.createElement("div");
-        actions.className = "msg-actions";
-
-        if (state.activeTarget.type !== "channel" || state.activeTarget.owner === state.me.username) {
-          const replyBtn = document.createElement("button");
-          replyBtn.type = "button";
-          replyBtn.className = "msg-action-btn";
-          replyBtn.textContent = "Odpowiedz";
-          replyBtn.addEventListener("click", () => {
-            state.replyTo = { id: m.id, sender: m.sender, text: m.text || "" };
-            $("replyAuthor").textContent = m.sender;
-            $("replyPreview").textContent = m.text || "[zdjęcie/GIF]";
-            $("replyBanner").classList.remove("hidden");
-            $("messageInput").focus();
-          });
-          actions.appendChild(replyBtn);
-        }
-
-        const fwdBtn = document.createElement("button");
-        fwdBtn.type = "button";
-        fwdBtn.className = "msg-action-btn";
-        fwdBtn.textContent = "Przekaż";
-        fwdBtn.addEventListener("click", () => openForwardModal(m));
-        actions.appendChild(fwdBtn);
-
-        if (m.text) {
-          const copyBtn = document.createElement("button");
-          copyBtn.type = "button";
-          copyBtn.className = "msg-action-btn";
-          copyBtn.textContent = "Kopiuj";
-          copyBtn.addEventListener("click", () => navigator.clipboard?.writeText(m.text).catch(() => {}));
-          actions.appendChild(copyBtn);
-        }
-
-        ["👍", "❤️", "😂", "🔥"].forEach((emo) => {
-          const btn = document.createElement("button");
-          btn.type = "button";
-          btn.className = "msg-action-btn";
-          btn.textContent = emo;
-          btn.addEventListener("click", () => toggleReaction(m.id, emo, reactions[emo] || []));
-          actions.appendChild(btn);
-        });
-
-        if (mine) {
-          if (m.text) {
-            const editBtn = document.createElement("button");
-            editBtn.type = "button";
-            editBtn.className = "msg-action-btn";
-            editBtn.textContent = "Edytuj";
-            editBtn.addEventListener("click", async () => {
-              const nextText = prompt("Edytuj wiadomość:", m.text);
-              if (nextText !== null && nextText.trim()) {
-                await updateDoc(doc(getMessagesCollectionRef(), m.id), {
-                  text: nextText.trim(),
-                  edited: true
-                }).catch(() => {});
-              }
+        if (!isBebzunPublicChat()) {
+          const reactions = m.reactions || {};
+          const chips = Object.entries(reactions).filter(([, arr]) => Array.isArray(arr) && arr.length > 0);
+          if (chips.length) {
+            const rRow = document.createElement("div");
+            rRow.className = "reactions-row";
+            chips.forEach(([emoji, users]) => {
+              const chip = document.createElement("button");
+              chip.type = "button";
+              chip.className = "reaction-chip";
+              chip.textContent = `${emoji} ${users.length}`;
+              chip.title = users.join(", ");
+              chip.addEventListener("click", () => toggleReaction(m.id, emoji, users));
+              rRow.appendChild(chip);
             });
-            actions.appendChild(editBtn);
+            row.appendChild(rRow);
           }
 
+          const actions = document.createElement("div");
+          actions.className = "msg-actions";
+
+          if (state.activeTarget.type !== "channel" || state.activeTarget.owner === state.me.username) {
+            const replyBtn = document.createElement("button");
+            replyBtn.type = "button";
+            replyBtn.className = "msg-action-btn";
+            replyBtn.textContent = "Odpowiedz";
+            replyBtn.addEventListener("click", () => {
+              state.replyTo = { id: m.id, sender: m.sender, text: m.text || "" };
+              $("replyAuthor").textContent = m.sender;
+              $("replyPreview").textContent = m.text || "[zdjęcie/GIF]";
+              $("replyBanner").classList.remove("hidden");
+              $("messageInput").focus();
+            });
+            actions.appendChild(replyBtn);
+          }
+
+          const fwdBtn = document.createElement("button");
+          fwdBtn.type = "button";
+          fwdBtn.className = "msg-action-btn";
+          fwdBtn.textContent = "Przekaż";
+          fwdBtn.addEventListener("click", () => openForwardModal(m));
+          actions.appendChild(fwdBtn);
+
+          if (m.text) {
+            const copyBtn = document.createElement("button");
+            copyBtn.type = "button";
+            copyBtn.className = "msg-action-btn";
+            copyBtn.textContent = "Kopiuj";
+            copyBtn.addEventListener("click", () => navigator.clipboard?.writeText(m.text).catch(() => {}));
+            actions.appendChild(copyBtn);
+          }
+
+          ["👍", "❤️", "😂", "🔥"].forEach((emo) => {
+            const btn = document.createElement("button");
+            btn.type = "button";
+            btn.className = "msg-action-btn";
+            btn.textContent = emo;
+            btn.addEventListener("click", () => toggleReaction(m.id, emo, reactions[emo] || []));
+            actions.appendChild(btn);
+          });
+
+          if (mine) {
+            if (m.text) {
+              const editBtn = document.createElement("button");
+              editBtn.type = "button";
+              editBtn.className = "msg-action-btn";
+              editBtn.textContent = "Edytuj";
+              editBtn.addEventListener("click", async () => {
+                const nextText = prompt("Edytuj wiadomość:", m.text);
+                if (nextText !== null && nextText.trim()) {
+                  await updateDoc(doc(getMessagesCollectionRef(), m.id), {
+                    text: nextText.trim(),
+                    edited: true
+                  }).catch(() => {});
+                }
+              });
+              actions.appendChild(editBtn);
+            }
+
+            const delBtn = document.createElement("button");
+            delBtn.type = "button";
+            delBtn.className = "msg-action-btn";
+            delBtn.textContent = "Usuń";
+            delBtn.addEventListener("click", async () => {
+              await deleteDoc(doc(getMessagesCollectionRef(), m.id)).catch(() => {});
+            });
+            actions.appendChild(delBtn);
+          }
+
+          row.appendChild(actions);
+        } else if (mine) {
+          const actions = document.createElement("div");
+          actions.className = "msg-actions";
           const delBtn = document.createElement("button");
           delBtn.type = "button";
           delBtn.className = "msg-action-btn";
           delBtn.textContent = "Usuń";
           delBtn.addEventListener("click", async () => {
-            await deleteDoc(doc(getMessagesCollectionRef(), m.id)).catch(() => {});
+            await deleteDoc(doc(bebzunDb, "messages", m.id)).catch(() => {});
           });
           actions.appendChild(delBtn);
+          row.appendChild(actions);
         }
 
-        row.appendChild(actions);
         box.appendChild(row);
       });
 
@@ -1856,11 +2242,26 @@
         $("forwardModal").classList.add("hidden");
       };
 
+      const pubTarget = getPublicServerTarget();
       const pubBtn = document.createElement("button");
       pubBtn.type = "button";
       pubBtn.className = "forward-choice";
-      pubBtn.innerHTML = `<span>🌐 Public Server</span><span>Wyślij ➤</span>`;
-      pubBtn.addEventListener("click", () => sendToCol(collection(db, "public_server", "main", "messages")));
+      pubBtn.innerHTML = `<span>${state.appMode === "bebzunchat" ? "💬" : "🌐"} ${escapeHtml(pubTarget.title)}</span><span>Wyślij ➤</span>`;
+      pubBtn.addEventListener("click", () => {
+        if (state.appMode === "bebzunchat") {
+          addDoc(collection(bebzunDb, "messages"), {
+            user: state.me.username,
+            text: msg.text || "",
+            image: msg.imageUrl || null,
+            room: state.bebzunRoom,
+            clientTime: Date.now(),
+            timestamp: serverTimestamp()
+          });
+          $("forwardModal").classList.add("hidden");
+        } else {
+          sendToCol(collection(db, "public_server", "main", "messages"));
+        }
+      });
       box.appendChild(pubBtn);
 
       state.users
@@ -1893,7 +2294,7 @@
     $("toggleGifBtn").addEventListener("click", () => {
       $("gifPicker").classList.toggle("hidden");
       if (!$("gifPicker").classList.contains("hidden")) {
-        loadGifs("");
+        loadGifs($("gifSearchInput").value.trim());
         $("gifSearchInput").focus();
       }
     });
@@ -1902,49 +2303,87 @@
     let gifDebounce = null;
     $("gifSearchInput").addEventListener("input", () => {
       clearTimeout(gifDebounce);
-      gifDebounce = setTimeout(() => loadGifs($("gifSearchInput").value.trim()), 250);
+      gifDebounce = setTimeout(() => loadGifs($("gifSearchInput").value.trim()), 200);
     });
+
+    function filterFallbackGifs(queryStr) {
+      const q = (queryStr || "").toLowerCase();
+      if (!q) return FALLBACK_GIFS;
+      const matches = FALLBACK_GIFS.filter((g) =>
+        g.title.toLowerCase().includes(q) ||
+        (Array.isArray(g.tags) && g.tags.some((t) => t.toLowerCase().includes(q)))
+      );
+      return matches.length ? matches : FALLBACK_GIFS;
+    }
 
     async function loadGifs(queryStr) {
       const grid = $("gifGrid");
+      const status = $("gifStatus");
       grid.innerHTML = `<div style="font-size:12px;color:var(--text-muted);">Ładowanie GIF-ów...</div>`;
-      let items = FALLBACK_GIFS;
+      status.textContent = "";
+
+      let items = [];
+      const cleanQuery = (queryStr || "").trim();
 
       if (state.giphyKey) {
         try {
-          const endpoint = queryStr
-            ? `https://api.giphy.com/v1/gifs/search?api_key=${encodeURIComponent(state.giphyKey)}&q=${encodeURIComponent(queryStr)}&limit=12&rating=pg-13`
-            : `https://api.giphy.com/v1/gifs/trending?api_key=${encodeURIComponent(state.giphyKey)}&limit=12&rating=pg-13`;
+          const endpoint = cleanQuery
+            ? `https://api.giphy.com/v1/gifs/search?api_key=${encodeURIComponent(state.giphyKey)}&q=${encodeURIComponent(cleanQuery)}&limit=16&rating=pg-13`
+            : `https://api.giphy.com/v1/gifs/trending?api_key=${encodeURIComponent(state.giphyKey)}&limit=16&rating=pg-13`;
           const res = await fetch(endpoint);
           const json = await res.json();
-          if (Array.isArray(json.data) && json.data.length) {
-            items = json.data.map((g) => ({
-              title: g.title || "GIF",
-              url: g.images?.fixed_height?.url || g.images?.original?.url
-            })).filter((x) => x.url);
+          if (!res.ok) {
+            throw new Error(json?.message || `HTTP ${res.status}`);
           }
-        } catch {}
-      } else if (queryStr) {
-        const filtered = FALLBACK_GIFS.filter((g) => g.title.toLowerCase().includes(queryStr.toLowerCase()));
-        items = filtered.length ? filtered : FALLBACK_GIFS;
+          items = (Array.isArray(json.data) ? json.data : [])
+            .map((g) => ({
+              title: g.title || "GIF",
+              url: g.images?.fixed_height?.url || g.images?.downsized?.url || g.images?.original?.url
+            }))
+            .filter((x) => x.url);
+
+          if (!items.length) {
+            items = filterFallbackGifs(cleanQuery);
+            status.textContent = "Brak wyników w GIPHY dla tej frazy — pokazuję propozycje.";
+          }
+        } catch (err) {
+          items = filterFallbackGifs(cleanQuery);
+          status.textContent = `Błąd klucza GIPHY (${err.message}) — pokazuję wbudowane GIF-y.`;
+        }
+      } else {
+        items = filterFallbackGifs(cleanQuery);
+        status.textContent = cleanQuery
+          ? `Wyniki dla "${cleanQuery}" (dodaj klucz GIPHY w Ustawieniach, aby szukać po całym GIPHY).`
+          : "Wbudowane GIF-y (wpisz hasło lub dodaj klucz GIPHY w Ustawieniach).";
       }
 
       grid.innerHTML = "";
       items.forEach((gif) => {
         const cell = document.createElement("div");
         cell.className = "gif-item";
-        cell.innerHTML = `<img src="${escapeAttribute(gif.url)}" alt="${escapeAttribute(gif.title)}" />`;
+        cell.innerHTML = `<img src="${escapeAttribute(gif.url)}" alt="${escapeAttribute(gif.title)}" loading="lazy" />`;
         cell.addEventListener("click", async () => {
           if (!state.activeTarget) return;
-          await addDoc(getMessagesCollectionRef(), {
-            sender: state.me.username,
-            text: "",
-            imageUrl: gif.url,
-            replyTo: state.replyTo || null,
-            readBy: [state.me.username],
-            reactions: {},
-            createdAt: serverTimestamp()
-          });
+          if (isBebzunPublicChat()) {
+            await addDoc(collection(bebzunDb, "messages"), {
+              user: state.me.username,
+              text: "",
+              image: gif.url,
+              room: state.bebzunRoom,
+              clientTime: Date.now(),
+              timestamp: serverTimestamp()
+            });
+          } else {
+            await addDoc(getMessagesCollectionRef(), {
+              sender: state.me.username,
+              text: "",
+              imageUrl: gif.url,
+              replyTo: state.replyTo || null,
+              readBy: [state.me.username],
+              reactions: {},
+              createdAt: serverTimestamp()
+            });
+          }
           state.replyTo = null;
           $("replyBanner").classList.add("hidden");
           $("gifPicker").classList.add("hidden");
@@ -1955,7 +2394,7 @@
 
     // Status "pisze..."
     $("messageInput").addEventListener("input", () => {
-      if (!state.activeTarget || !state.me || state.activeTarget.type === "channel") return;
+      if (!state.activeTarget || !state.me || state.activeTarget.type === "channel" || isBebzunPublicChat()) return;
       setDoc(getChatDocRef(), {
         typing: { [state.me.username]: Date.now() }
       }, { merge: true }).catch(() => {});
@@ -1987,6 +2426,20 @@
       if (!text) return;
 
       $("messageInput").value = "";
+
+      if (isBebzunPublicChat()) {
+        await addDoc(collection(bebzunDb, "messages"), {
+          user: state.me.username,
+          text,
+          image: null,
+          room: state.bebzunRoom,
+          clientTime: Date.now(),
+          timestamp: serverTimestamp()
+        });
+        await maybeTriggerBebzunBot(text);
+        return;
+      }
+
       const payload = {
         sender: state.me.username,
         text,
@@ -2019,15 +2472,27 @@
           canvas.height = Math.round(img.height * scale);
           canvas.getContext("2d").drawImage(img, 0, 0, canvas.width, canvas.height);
           const dataUrl = canvas.toDataURL("image/jpeg", 0.75);
-          await addDoc(getMessagesCollectionRef(), {
-            sender: state.me.username,
-            text: "",
-            imageUrl: dataUrl,
-            replyTo: state.replyTo || null,
-            readBy: [state.me.username],
-            reactions: {},
-            createdAt: serverTimestamp()
-          });
+
+          if (isBebzunPublicChat()) {
+            await addDoc(collection(bebzunDb, "messages"), {
+              user: state.me.username,
+              text: "",
+              image: dataUrl,
+              room: state.bebzunRoom,
+              clientTime: Date.now(),
+              timestamp: serverTimestamp()
+            });
+          } else {
+            await addDoc(getMessagesCollectionRef(), {
+              sender: state.me.username,
+              text: "",
+              imageUrl: dataUrl,
+              replyTo: state.replyTo || null,
+              readBy: [state.me.username],
+              reactions: {},
+              createdAt: serverTimestamp()
+            });
+          }
           state.replyTo = null;
           $("replyBanner").classList.add("hidden");
         };
@@ -2048,7 +2513,6 @@
     });
     $("msgSearchInput").addEventListener("input", renderMessages);
 
-    // Tworzenie grup i kanałów
     $("createBtn").addEventListener("click", () => {
       $("privateGroupField").classList.toggle("hidden", $("createKindSelect").value === "channel");
       $("createModal").classList.remove("hidden");
@@ -2128,6 +2592,28 @@
     $("closeSettingsBtn").addEventListener("click", () => {
       $("settingsDrawer").classList.add("hidden");
       showEmptyOrChat();
+    });
+
+    $("appModeSelect").addEventListener("change", () => {
+      state.appMode = $("appModeSelect").value;
+      localStorage.setItem("pickchat_app_mode", state.appMode);
+      applyAppMode();
+      if (state.appMode === "bebzunchat") {
+        setTab("public");
+        openChat(getPublicServerTarget());
+        $("settingsFeedback").textContent = "Połączono z serwerem bebechchat (BebzunChat server).";
+      } else if (state.appMode === "orkanet") {
+        $("settingsFeedback").textContent = `Aktywowano tryb OrkaNet (${state.orkanetVariant}).`;
+      } else {
+        $("settingsFeedback").textContent = "Przywrócono tryb PickChat.";
+      }
+    });
+
+    $("orkanetVariantSelect").addEventListener("change", () => {
+      state.orkanetVariant = $("orkanetVariantSelect").value;
+      localStorage.setItem("pickchat_orkanet_variant", state.orkanetVariant);
+      applyAppMode();
+      $("settingsFeedback").textContent = `Zmieniono styl OrkaNet na: ${state.orkanetVariant}.`;
     });
 
     $("themeSelect").addEventListener("change", async () => {
